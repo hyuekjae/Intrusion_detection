@@ -1,0 +1,124 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #FF6F00;
+}
+
+
+video {
+  clear: both;
+  display: block;
+  margin: 10px;
+  background: #000000;
+  width: 640px;
+  height: 480px;
+}
+
+button {
+  padding: 10px;
+  float: left;
+  margin: 5px 3px 5px 10px;
+}
+
+.removed {
+  display: none;
+}
+
+#status {
+  font-size:150%;
+}
+
+/* ==== Bottom Log Panel ==== */
+#logPanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 160px;       /* 필요에 맞춰 높이 조절 */
+  overflow-y: auto;
+  background: rgba(0,0,0,0.75);
+  color: #f2f2f2;
+  padding: 8px 12px;
+  border-top: 2px solid #FF6F00;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  z-index: 9999;
+}
+#logStream > div {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 2px 0;
+  opacity: 0.9;
+}
+
+
+/* ==== Result Card ==== */
+:root {
+  --c1: #E67E22;   /* Class 1 메인색 (오렌지) */
+  --c1-bg: #FDEEE4;
+  --c2: #E91E63;   /* Class 2 메인색 (핑크) */
+  --c2-bg: #FDE4EC;
+}
+
+.result-card {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  max-width: 640px;
+}
+
+.result-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.result-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.cls-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 48px; /* 라벨 | 바 | 퍼센트 */
+  align-items: center;
+  gap: 10px;
+}
+
+.cls-label {
+  font-weight: 700;
+}
+
+.meter {
+  position: relative;
+  height: 18px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #F4F4F5; /* 기본 옅은 배경 */
+}
+
+.meter .bar {
+  height: 100%;
+  width: 0%;
+  transition: width 120ms linear;
+  border-radius: 9px;
+}
+
+/* Class별 색상 (1행/2행) */
+.result-rows .cls-row:nth-child(1) .meter { background: var(--c1-bg); }
+.result-rows .cls-row:nth-child(1) .bar   { background: var(--c1);   }
+.result-rows .cls-row:nth-child(2) .meter { background: var(--c2-bg); }
+.result-rows .cls-row:nth-child(2) .bar   { background: var(--c2);   }
+
+.pct {
+  text-align: right;
+  font-weight: 700;
+}
